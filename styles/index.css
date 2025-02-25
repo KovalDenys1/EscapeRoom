@@ -10,32 +10,113 @@
     font-style: normal;
 }
 body {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    background: linear-gradient(to bottom, #BD2635 42%, #F62336 100%);
+    background: linear-gradient(to bottom, #8F000E 42%, #F62336 100%);
     font-size: clamp(16px, 3vw, 36px);
     font-family: 'Nico Moji', sans-serif;
+    color: white;
 }
 header {
+    display: flex;
     align-items: center;
-    padding: 3rem 8rem;
-}
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+    height: 15vh;
+    width: 100vw;
 }
 nav {
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    gap: 20px;
+    padding: 0 calc(6vw);
 }
 nav a {
     color: white;
     text-decoration: none;
 }
 nav a:hover {
-    text-decoration: none;
+    color: rgb(199, 199, 199);
 }
+main{
+    display: flex;
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+  main img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 2; /* Картинка будет спереди */
+    animation: resizeAnimation 2.8s infinite ease-in-out;
+  }
+
+  @keyframes resizeAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  main .background-text {
+    position: absolute;
+    top: 55%;
+    left: -100%; /* Начальная позиция текста слева за пределами контейнера */
+    transform: translateY(-100%);
+    white-space: nowrap;
+    z-index: 1; /* Текст будет позади картинки */
+    font-size: 15rem;
+    color: white;
+    white-space: nowrap;
+    animation: moveText 12s linear infinite; /* Анимация движения текста */
+  }
+  main .hero-name{
+    position: absolute;
+    top: 55%;
+    left: 7.5%;
+    color: rgb(255, 255, 255, 0.75);
+  }
+  main .danger{
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    color: rgb(255, 255, 255, 0.75);
+  }
+  .play-btn{
+    position: absolute;
+  background-color: rgba(28, 28, 28, 0.7); /* Зеленый цвет */
+  backdrop-filter: blur(6.5px);
+  color: white; /* Цвет текста */
+  z-index: 3;
+  padding: 1rem 10rem 3rem 8rem; /* Отступы вокруг текста */
+  border: none; /* Без рамки */
+  cursor: pointer; /* Курсор меняется на руку при наведении */
+  transition: all 0.3s ease; /* Плавный переход для всех изменений */
+ font-size: clamp(100px, 3vw, 110px);
+ font-family: 'Nico Moji', sans-serif;
+ top: 75%;
+ clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+.play-btn:hover{
+    background-color: rgba(28, 28, 28, 0.7);
+    color:#F62336;
+}
+  @keyframes moveText {
+    0% {
+      left: -100%; /* Текст начинается слева за пределами */
+    }
+    100% {
+      left: 11%; /* Текст заканчивает движение справа за пределами */
+    }
+  }
+
 .puzzle-container {
     text-align: center;
     margin-top: 50px;
@@ -48,14 +129,4 @@ nav a:hover {
 }
 input[type="text"] {
     padding: 5px;
-}
-button {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #374a96;
 }
