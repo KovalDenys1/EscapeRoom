@@ -35,7 +35,60 @@ window.onload = function() {
           dangerElement.textContent = `Danger ${Math.round(percentage)}%`;
       }
   });
-  
+
+
+  document.querySelector(".play-btn").addEventListener("click", () => {
+    const elementsToHide = document.querySelectorAll(".background-text, .hero-name, .danger, .play-btn");
+    const elementsToShow = document.querySelectorAll(".welcome-div");
+    const specificImage = document.querySelector(".target-image"); // Определённая картинка
+
+    elementsToHide.forEach(element => {
+        let duration = 0.7;
+        let delay = 0;
+
+        if (element.classList.contains("background-text")) {
+            duration = 0.6;
+        } else if (element.classList.contains("play-btn")) {
+            duration = 1.4;
+        }
+
+        setTimeout(() => {
+            element.style.transition = `opacity ${duration}s ease-out`;
+            element.style.opacity = "0";
+
+            setTimeout(() => {
+                element.style.display = "none";
+            }, duration * 1000);
+        }, delay * 1000);
+    });
+
+    // Обрабатываем только указанную картинку
+    if (specificImage) {
+        setTimeout(() => {
+            specificImage.style.transition = "opacity 1.1s ease-out";
+            specificImage.style.opacity = "0";
+
+            setTimeout(() => {
+                specificImage.style.display = "none";
+            }, 1100);
+        }, 300); // Задержка перед исчезновением
+    }
+
+    // Добавляем задержку перед появлением новых элементов
+    setTimeout(() => {
+        elementsToShow.forEach(element => {
+            element.style.display = "flex";
+            element.style.opacity = "0";
+            element.style.transition = "opacity 1s ease-in";
+
+            setTimeout(() => {
+                element.style.opacity = "1";
+            }, 100);
+        });
+    }, 1200);
+});
+
+
 function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
     const userAnswer = document.getElementById(answerId).value ? document.getElementById(answerId).value.toLowerCase() : document.getElementById(answerId).innerText.toLowerCase();
     let correctAnswer;
