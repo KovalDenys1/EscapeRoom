@@ -7,6 +7,98 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="#about">About us</a>
+            <a href="#home">Home</a>
+            <a href="#info">Info</a>
+        </nav>
+    </header>
+    <main>
+
+        <!-- Puzzle 1 -->
+        <div class="puzzle-container" id="puzzle1">
+            <div class="puzzle-text">
+                Encrypted message: <br>
+                <strong>Efozt boe Ojmpl</strong>
+            </div>
+    
+            <div class="input-container">
+                <label for="answer1">Enter your answer:</label><br>
+                <input type="text" id="answer1" placeholder="Your answer">
+            </div>
+    
+            <button onclick="checkAnswer('answer1', 'puzzle1', 'puzzle2')">Check</button>
+    
+            <div id="feedback1" style="margin-top: 20px;"></div>
+        </div>
+    
+        <!-- Puzzle 2 -->
+        <div class="puzzle-container" id="puzzle2" style="display: none;">
+            <div class="puzzle-text">
+                What is 5 + 3?
+            </div>
+    
+            <div class="input-container">
+                <label for="answer2">Enter your answer:</label><br>
+                <input type="text" id="answer2" placeholder="Your answer">
+            </div>
+    
+            <button onclick="checkAnswer('answer2', 'puzzle2', 'puzzle3')">Check</button>
+    
+            <div id="feedback2" style="margin-top: 20px;"></div>
+        </div>
+    
+        <!-- Puzzle 3 -->
+        <div class="puzzle-container" id="puzzle3" style="display: none;">
+            <div class="puzzle-text">
+                I am always ahead, but I can never be reached. What am I?
+            </div>
+    
+            <div class="input-container">
+                <label for="answer3">Enter your answer:</label><br>
+                <input type="text" id="answer3" placeholder="Your answer">
+            </div>
+    
+            <button onclick="checkAnswer('answer3', 'puzzle3', 'puzzle4')">Check</button>
+    
+            <div id="feedback3" style="margin-top: 20px;"></div>
+        </div>
+    
+        <!-- Puzzle 4 -->
+        <div class="puzzle-container" id="puzzle4" style="display: none;">
+            <div class="puzzle-text">
+                Find the secret answer in the console.
+            </div>
+    
+            <div class="input-container">
+                <label for="answer4">Enter your answer:</label><br>
+                <input type="text" id="answer4" placeholder="Your answer">
+            </div>
+    
+            <button onclick="checkAnswer('answer4', 'puzzle4', null)">Check</button>
+    
+            <div id="feedback4" style="margin-top: 20px;"></div>
+        </div>
+        
+        <!-- Puzzle 5 -->
+<div class="puzzle-container" id="puzzle5" style="display: none;">
+    <div class="puzzle-text">
+        You have two ropes. Each rope has the property that if you light it on fire at one end, it will take exactly 60 minutes to burn completely. However, the ropes do not burn at a uniform rate. For example, half of the rope could burn in 1 minute, and the other half could burn in 59 minutes. How can you measure exactly 45 minutes using only these two ropes?
+    </div>
+
+    <div class="buttons-container">
+        <button onclick="checkAnswer('option1', 'puzzle5', null)">Light both ropes from one end</button>
+        <button onclick="checkAnswer('option2', 'puzzle5', null)">Light both ropes from both ends</button>
+        <button onclick="checkAnswer('option3', 'puzzle5', null)">Light one rope from one end, second rope from both ends</button>
+    </div>
+
+    <div id="feedback5" style="margin-top: 20px;"></div>
+</div>
+
+
+    </main>
+    
     <script src="./js/index.js"></script>
 </body>
 </html>

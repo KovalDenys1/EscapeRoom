@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Nico Moji';
+    src: url('../fonts/nicomoji-plus_v2.5/nicomoji-plus_v2-5.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, #BD2635 42%, #F62336 100%);
+    font-size: clamp(16px, 3vw, 36px);
+    font-family: 'Nico Moji', sans-serif;
+}
+header {
+    align-items: center;
+    padding: 3rem 8rem;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: none;
+}
+.puzzle-container {
+    text-align: center;
+    margin-top: 50px;
+}
+.puzzle-text {
+    margin-bottom: 20px;
+}
+.input-container {
+    margin-bottom: 20px;
+}
+input[type="text"] {
+    padding: 5px;
+}
+button {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #374a96;
+}
