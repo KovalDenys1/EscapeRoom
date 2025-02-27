@@ -1,0 +1,54 @@
+#about-us {
+    display: none; /* Скрыт по умолчанию */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%; /* Центрирование по вертикали */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Подтягивает блок в центр */
+    z-index: 3; /* Убедитесь, что этот индекс выше, чем у других элементов */
+    background-color: rgba(28, 28, 28, 0.7); 
+    backdrop-filter: blur(6.5px);
+    font-family: 'Nico Moji', sans-serif;
+    padding: 2vw;
+    text-align: center;
+    overflow: hidden;
+    color: #F0EEEF; /* Убедитесь, что цвет текста белый */
+    width: 80%;
+    height: 80%;
+    
+}
+
+#about-us h2 {
+    font-size: 2em;
+    text-align: right;
+    line-height: 2;
+}
+
+#about-us p {
+    font-size: 1em;
+    text-align: right;
+    line-height: 0.8;
+    
+}
+
+
+.github{
+    color:#F62336;
+}
+
+
+
+#image-wrapper {
+    
+    z-index: 4;  /* Это обеспечит, что картинка будет сверху */
+    display: none; /* Скрыто по умолчанию */
+    
+   
+}
+
+#image-wrapper img {
+   height: 70vh;
+   object-fit: cover;  /* Изображение будет масштабироваться, сохраняя пропорции */
+   margin-right: 45vw;
+}
