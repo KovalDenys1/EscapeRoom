@@ -1,38 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./img/Girl_png.png">
     <title>Cyber Escape Room</title>
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/preloader.css">
+    <link rel="stylesheet" href="./styles/aboutus.css">
 </head>
+
 <body>
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="loader"></div>
+            <div class="loading-text">Download<span class="dots"></span></div>
+        </div>
+    </div>
+
     <header>
         <nav>
-            <a href="https://kovaldenys1.github.io/EscapeRoom/">About us</a>
+            <a href="#" id="about-us-link">About us</a>
             <a href="https://kovaldenys1.github.io/EscapeRoom/">Home</a>
             <a href="https://kovaldenys1.github.io/EscapeRoom/">Info</a>
         </nav>
     </header>
     <main>
-            <div class="background-text">
-              <p>Escape room Escape room Escape room Escape room Escape room Escape room Escape room Escape room</p>
-            </div>
-            <div class="hero-name">Hero: Your Name</div>
-            <div class="danger">Danger 0%</div>
-            <img src="./img/Girl_png.png" alt="Main_charakter" class="target-image">
-            <button class="play-btn danger-btn">Play</button>
+        <div class="background-text">
+            <p>Escape room Escape room Escape room Escape room Escape room Escape room Escape room Escape room</p>
+        </div>
+        <div class="hero-name">Hero: Your Name</div>
+        <div class="danger">Danger 0%</div>
+        <img src="./img/Girl_png.png" alt="Main_charakter" class="target-image">
+        <button class="play-btn danger-btn">Play</button>
 
-            <div class="welcome-div">
-                <div class="welcome-img-wrapper"><img src="./img/Girl_png.png" alt="Welcome-girl"></div>
-                <div class="welcome-text">Hello there! Welcome to our game.<br>
-                    You have traveled to the future using a time machine, but it’s broken, and now you must repair it...
-                    <button>Let's do it!</button>
-                </div>
-                </div>
+        <!-- Секция About Us, скрыта по умолчанию -->
+      
+        </div>
+        <div id="about-us" style="display: none;">
+            <h2>About Us</h2>
+            <p>Hi there!<br><br>
+                This is Nikol and Denys.<br><br>
+                We are Junior Frontend Developers.<br><br>
+                We are students of high school Kuben in Oslo.<br><br>
+                We decided to come up with the Escape Room to <br><br>
+                realize our potentials in the front-end development.<br><br>
+                We are always open for new offers, <br><br>
+                write to our mail and visit our <span class="github">Github</span>.</p>
+
+        </div>
+
+
+        <div class="welcome-div">
+            <div class="welcome-img-wrapper"><img src="./img/Girl_png.png" alt="Welcome-girl"></div>
+            <div class="welcome-text">Hello there! Welcome to our game.<br>
+                You have traveled to the future using a time machine, but it’s broken, and now you must repair it...
+                <button>Let's do it!</button>
+            </div>
+        </div>
+
+        <!-- About us -->
+
+
+
+
         <!-- Puzzle 1 -->
-         <!--
+        <!--
         <div class="puzzle-container" id="puzzle1">
             <div class="puzzle-text">
                 Encrypted message: <br>
@@ -50,7 +84,7 @@
         </div>
         -->
         <!-- Puzzle 2 -->
-         <!--
+        <!--
         <div class="puzzle-container" id="puzzle2" style="display: none;">
             <div class="puzzle-text">
                 What is 5 + 3?
@@ -67,7 +101,7 @@
         </div>
         -->
         <!-- Puzzle 3 -->
-         <!--
+        <!--
         <div class="puzzle-container" id="puzzle3" style="display: none;">
             <div class="puzzle-text">
                 I am always ahead, but I can never be reached. What am I?
@@ -84,7 +118,7 @@
         </div>
         -->
         <!-- Puzzle 4 -->
-         <!--
+        <!--
         <div class="puzzle-container" id="puzzle4" style="display: none;">
             <div class="puzzle-text">
                 Find the secret answer in the console.
@@ -99,9 +133,9 @@
     
             <div id="feedback4" style="margin-top: 20px;"></div>
         </div>
-        --> 
+        -->
         <!-- Puzzle 5 -->
-         <!--
+        <!--
 <div class="puzzle-container" id="puzzle5" style="display: none;">
     <div class="puzzle-text">
         You have two ropes. Each rope has the property that if you light it on fire at one end, it will take exactly 60 minutes to burn completely. However, the ropes do not burn at a uniform rate. For example, half of the rope could burn in 1 minute, and the other half could burn in 59 minutes. How can you measure exactly 45 minutes using only these two ropes?
@@ -118,7 +152,15 @@
 
         -->
     </main>
-    
+
     <script src="./js/index.js"></script>
+    <script src="./js/preloader.js"></script>
+    <script src="./js/aboutus.js"></script>
+
 </body>
+
+</html>
+
+</body>
+
 </html>
