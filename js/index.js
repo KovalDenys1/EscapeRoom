@@ -6,7 +6,6 @@
       const cursorX = event.clientX;
       const cursorY = event.clientY;
   
-      // Проверяем, находится ли курсор внутри кнопки
       if (
           cursorX >= btnRect.left &&
           cursorX <= btnRect.right &&
@@ -15,12 +14,10 @@
       ) {
           dangerElement.textContent = "Danger 100%";
       } else {
-          // Вычисляем расстояние от курсора до кнопки
           const dx = Math.max(btnRect.left - cursorX, cursorX - btnRect.right, 0);
           const dy = Math.max(btnRect.top - cursorY, cursorY - btnRect.bottom, 0);
           const distance = Math.sqrt(dx * dx + dy * dy);
   
-          // Чем дальше курсор, тем меньше процент (ограничиваем от 0% до 99%)
           let percentage = Math.max(0, 99 - distance / 10); 
           dangerElement.textContent = `Danger ${Math.round(percentage)}%`;
       }
@@ -28,11 +25,11 @@
 
 
   document.querySelector(".play-btn").addEventListener("click", () => {
-    toggleElements(false); // Скрыть стартовые элементы и показать новые
+    toggleElements(false); 
 });
 
 document.querySelector(".back-to-home").addEventListener("click", () => {
-    toggleElements(true); // Скрыть новые элементы и вернуть стартовые
+    toggleElements(true); 
 });
 
 function toggleElements(isReturning) {
@@ -41,7 +38,7 @@ function toggleElements(isReturning) {
     const specificImage = document.querySelector(".target-image");
 
     if (isReturning) {
-        // Вернуть стартовые элементы
+
         elementsToHide.forEach(element => {
             element.style.display = "block";
             element.style.opacity = "0";
@@ -52,7 +49,6 @@ function toggleElements(isReturning) {
             }, 900);
         });
 
-        // Вернуть картинку
         if (specificImage) {
             specificImage.style.display = "block";
             specificImage.style.opacity = "0";
@@ -63,7 +59,6 @@ function toggleElements(isReturning) {
             }, 100);
         }
 
-        // Скрыть welcome-div
         elementsToShow.forEach(element => {
             element.style.transition = "opacity 0.7s ease-out";
             element.style.opacity = "0";
@@ -73,7 +68,6 @@ function toggleElements(isReturning) {
             }, 700);
         });
     } else {
-        // Исчезновение стартовых элементов
         elementsToHide.forEach(element => {
             let duration = 0.7;
             let delay = 0;
@@ -94,7 +88,6 @@ function toggleElements(isReturning) {
             }, delay * 1000);
         });
 
-        // Исчезновение картинки
         if (specificImage) {
             setTimeout(() => {
                 specificImage.style.transition = "opacity 1.1s ease-out";
@@ -106,7 +99,6 @@ function toggleElements(isReturning) {
             }, 300);
         }
 
-        // Появление новых элементов
         setTimeout(() => {
             elementsToShow.forEach(element => {
                 element.style.display = "flex";
@@ -125,31 +117,30 @@ document.querySelector(".first-puzzle").addEventListener("click", () => {
     const welcomeDiv = document.querySelector(".welcome-div");
     const puzzleContainer = document.querySelector(".puzzle-container");
 
-    // Сначала плавно меняем фон на синий градиент
-    document.body.style.background = "linear-gradient(to bottom, #013779, #016BC3)"; 
-
-    // Скрываем welcome-div с плавной анимацией
     welcomeDiv.style.transition = "opacity 1s ease-out";
     welcomeDiv.style.opacity = "0";
 
     setTimeout(() => {
-        welcomeDiv.style.display = "none"; // Полностью скрываем
-        puzzleContainer.style.display = "block"; // Показываем головоломку
-        puzzleContainer.style.opacity = "0"; // Делаем её невидимой
-        puzzleContainer.style.transition = "opacity 1s ease-in"; // Анимация появления
+        welcomeDiv.style.display = "none"; 
+        puzzleContainer.style.display = "block"; 
+        puzzleContainer.style.opacity = "0"; 
+        puzzleContainer.style.transition = "opacity 1s ease-in"; 
 
         setTimeout(() => {
-            puzzleContainer.style.opacity = "1"; // Плавное появление
+            puzzleContainer.style.opacity = "1"; 
         }, 100);
-    }, 1000); // Подождать 1 секунду перед скрытием welcome-div
+
+        document.body.style.transition = "background 1s ease";
+        document.body.style.background = "linear-gradient(to bottom, #013779, #016BC3)";
+    }, 1500);
 });
+
 
 
 function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
     const userAnswer = document.getElementById(answerId).value ? document.getElementById(answerId).value.toLowerCase() : document.getElementById(answerId).innerText.toLowerCase();
     let correctAnswer;
 
-    // Define the correct answers for each puzzle
     if (currentPuzzleId === 'puzzle1') {
         correctAnswer = "nikol and denys".toLowerCase();
     } else if (currentPuzzleId === 'puzzle2') {
@@ -166,11 +157,11 @@ function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
         feedback.innerHTML = "<span class='correct-answer' style='color: green;'>Correct answer!</span>";
 
         const correctText = feedback.querySelector(".correct-answer");
-        correctText.style.opacity = "0"; // Начинаем с нуля
-        correctText.style.transition = "opacity 0.5s ease-in"; // Плавное появление
+        correctText.style.opacity = "0"; 
+        correctText.style.transition = "opacity 0.5s ease-in"; 
         
         setTimeout(() => {
-            correctText.style.opacity = "1"; // Появление
+            correctText.style.opacity = "1"; 
         }, 50);
 
         setTimeout(() => {
@@ -197,26 +188,25 @@ function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
             }
         }, 1000);
 
-        // Change background color to yellow gradient on the third puzzle
+        
         if (currentPuzzleId === 'puzzle2') {
             setTimeout(() => {
                 document.body.style.background = 'linear-gradient(to bottom, #FFAA01, #FFD401)';
-            }, 2000); // Задержка в 1 секунду (1000 миллисекунд)
+            }, 2000);
         }        
     } else {
-        // Анимация плавного появления текста ошибки
+        
         feedback.innerHTML = "<span class='incorrect-answer' style='color: #F62336;'>Incorrect answer</span>";
         
         const incorrectText = feedback.querySelector(".incorrect-answer");
-        incorrectText.style.opacity = "0"; // Начинаем с нуля
-        incorrectText.style.transition = "opacity 0.5s ease-in"; // Плавное появление
+        incorrectText.style.opacity = "0"; 
+        incorrectText.style.transition = "opacity 0.5s ease-in"; 
         
         setTimeout(() => {
-            incorrectText.style.opacity = "1"; // Появление
+            incorrectText.style.opacity = "1"; 
         }, 50);
     }
 
-    // For the 4th puzzle, log the answer in the console
     if (currentPuzzleId === 'puzzle3') {
         console.log("The secret answer is: console");
     }
