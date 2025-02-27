@@ -1,56 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./img/Girl_png.png">
     <title>Cyber Escape Room</title>
     <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/preloader.css">
-    <link rel="stylesheet" href="./styles/aboutus.css">
 </head>
-
 <body>
-    <script src="./js/index.js"></script>
-    <script src="./js/preloader.js"></script>
-    <script src="./js/aboutus.js"></script>
-    <div id="preloader">
-        <div class="preloader-content">
-            <div class="loader"></div>
-            <div class="loading-text">Download<span class="dots"></span></div>
-        </div>
-    </div>
-
     <header>
         <nav>
-            <a href="#" id="about-us-link">About us</a>
+            <a href="https://kovaldenys1.github.io/EscapeRoom/">About us</a>
             <a href="https://kovaldenys1.github.io/EscapeRoom/">Home</a>
             <a href="https://kovaldenys1.github.io/EscapeRoom/">Info</a>
         </nav>
     </header>
     <main>
-        <div class="background-text">
-            <p>Escape room Escape room Escape room Escape room Escape room Escape room Escape room Escape room</p>
-        </div>
-        <div class="hero-name">Hero: Your Name</div>
-        <div class="danger">Danger 0%</div>
-        <img src="./img/Girl_png.png" alt="Main_charakter" class="target-image">
-        <button class="play-btn danger-btn">Play</button>
+            <div class="background-text">
+              <p>Escape room Escape room Escape room Escape room Escape room Escape room Escape room Escape room</p>
+            </div>
+            <div class="hero-name">Hero: Your Name</div>
+            <div class="danger">Danger 0%</div>
+            <img src="./img/Girl_png.png" alt="Main_charakter" class="target-image">
+            <button class="play-btn danger-btn">Play</button>
 
-        <!-- Секция About Us, скрыта по умолчанию -->
-        <div id="about-us" style="display: none;">
-            <h2>About Us</h2>
-            <p>Hi there!<br><br>
-                This is Nikol and Denys.<br><br>
-                We are Junior Frontend Developers.<br><br>
-                We are students of high school Kuben in Oslo.<br><br>
-                We decided to come up with the Escape Room to <br><br>
-                realize our potentials in the front-end development.<br><br>
-                We are always open for new offers, <br><br>
-                write to our mail and visit our <span class="github">Github</span>.</p>
-
-        </div>
             <div class="welcome-div">
                 <div class="welcome-img-wrapper"><img src="./img/Girl_png.png" alt="Welcome-girl"></div>
                 <div class="welcome-text">Hello there! Welcome to our game.<br>
@@ -64,22 +37,23 @@
         <!-- Puzzle 1 -->
         <div class="puzzle-container" id="puzzle1">
             <div class="puzzle-1-img-wrapper"><img src="./img/black_robot.png" alt="Welcome-girl"></div>
-            <div class="puzzle-wrapper">
-                <div class="puzzle">
-                    <div class="puzzle-1">
-                        <div class="task">Encrypted message(+1):</div> 
-                        <div class="message">Efozt boe Ojmpl</div> 
-                        <label for="answer1">Enter your answer:</label>
-                        <input type="text" id="answer1" placeholder="Decrypted message">
-                        <div id="feedback1"></div>
+                <div class="puzzle-wrapper">
+                    <div class="puzzle">
+                        <div class="puzzle-1">
+                            <div class="task">Encrypted message(+1):</div> 
+                            <div class="message">Efozt boe Ojmpl</div> 
+                            <label for="answer1">Enter your answer:</label>
+                            <input type="text" id="answer1" placeholder="Decrypted message">
+                            <div id="feedback1"></div>
+                        </div>
+                        <div class="answer-btn"><button onclick="checkAnswer('answer1', 'puzzle1', 'puzzle2')">Check</button></div>
                     </div>
-                    <div class="answer-btn"><button onclick="checkAnswer('answer1', 'puzzle1', 'puzzle2')">Check</button></div>
                 </div>
+            <div class="hero_speech">
+            Hello hero!<br>Your first task is Caesar's encryption..
             </div>
-        <div class="hero_speech">
-        Hello hero!<br>Your first task is Caesar's encryption..
         </div>
-        </div>
+
         <!-- Puzzle 2 -->
         <div class="puzzle-container" id="puzzle2" style="display: none;">
             <div class="puzzle-text">
@@ -93,7 +67,7 @@
     
             <button onclick="checkAnswer('answer2', 'puzzle2', 'puzzle3')">Check</button>
     
-            <div id="feedback2" style="margin-top: 20px;"></div>
+            <div id="feedback2" style="margin-top: 1rem;"></div>
         </div>
         <!-- Puzzle 3 -->
         <div class="puzzle-container" id="puzzle3" style="display: none;">
@@ -108,7 +82,7 @@
     
             <button onclick="checkAnswer('answer3', 'puzzle3', 'puzzle4')">Check</button>
     
-            <div id="feedback3" style="margin-top: 20px;"></div>
+            <div id="feedback3" style="margin-top: 1rem;"></div>
         </div>
         <!-- Puzzle 4 -->
         <div class="puzzle-container" id="puzzle4" style="display: none;">
@@ -123,9 +97,10 @@
     
             <button onclick="checkAnswer('answer4', 'puzzle4', null)">Check</button>
     
-            <div id="feedback4" style="margin-top: 20px;"></div>
+            <div id="feedback4" style="margin-top: 1rem;"></div>
         </div>
         <!-- Puzzle 5 -->
+         <!--
 <div class="puzzle-container" id="puzzle5" style="display: none;">
     <div class="puzzle-text">
         You have two ropes. Each rope has the property that if you light it on fire at one end, it will take exactly 60 minutes to burn completely. However, the ropes do not burn at a uniform rate. For example, half of the rope could burn in 1 minute, and the other half could burn in 59 minutes. How can you measure exactly 45 minutes using only these two ropes?
@@ -139,6 +114,10 @@
 
     <div id="feedback5" style="margin-top: 20px;"></div>
 </div>
+
+        -->
     </main>
+    
+    <script src="./js/index.js"></script>
 </body>
 </html>

@@ -1,3 +1,13 @@
+window.onload = function() {
+    // Показываем всплывающее окно для ввода имени персонажа
+  // var heroName = prompt("Enter your character's name:");
+  
+    // Если пользователь что-то ввел, меняем текст в div
+    if (heroName !== null && heroName !== "") {
+      document.querySelector(".hero-name").textContent = "Hero: " + heroName;
+    }
+  };
+
   const dangerElement = document.querySelector(".danger");
   const dangerBtn = document.querySelector(".danger-btn");
   
