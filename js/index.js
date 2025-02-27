@@ -211,3 +211,73 @@ function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
         console.log("The secret answer is: console");
     }
 }
+
+
+let aboutUsVisible = false; // Флаг, чтобы отслеживать состояние блока
+
+document.querySelector("#about-us-link").addEventListener("click", (event) => {
+    event.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
+    toggleAboutUs();
+});
+
+document.querySelector("#home").addEventListener("click", (event) => {
+    event.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
+    if (aboutUsVisible) {
+        toggleAboutUs(); // Возвращаемся к начальному состоянию
+    }
+});
+
+function toggleAboutUs() {
+    const backgroundText = document.querySelector(".background-text");
+    const heroName = document.querySelector(".hero-name");
+    const danger = document.querySelector(".danger");
+    const img = document.querySelector("img");
+    const playBtn = document.querySelector(".play-btn");
+    const aboutUsDiv = document.querySelector(".about_us");
+
+    const elementsToHide = [backgroundText, heroName, danger, img, playBtn];
+
+    if (aboutUsVisible) {
+        // Если about_us показан, скрываем его и показываем остальные элементы
+        aboutUsDiv.style.transition = "opacity 1s ease-out";
+        aboutUsDiv.style.opacity = "0";
+
+        setTimeout(() => {
+            aboutUsDiv.style.display = "none";
+
+            elementsToHide.forEach(element => {
+                element.style.display = "block";
+                element.style.opacity = "0"; // Начинаем с нуля, чтобы анимация сработала
+                setTimeout(() => {
+                    element.style.transition = "opacity 1s ease-in";
+                    element.style.opacity = "1"; // Плавное появление
+                }, 100);
+            });
+        }, 1000);
+    } else {
+        // Если about_us скрыт, скрываем остальные элементы
+        elementsToHide.forEach(element => {
+            element.style.transition = "opacity 1s ease-out";
+            element.style.opacity = "0";
+        });
+
+        setTimeout(() => {
+            elementsToHide.forEach(element => {
+                element.style.display = "none"; // Полностью скрываем
+            });
+
+            // Исправление бага: сначала ставим display, а потом меняем opacity с задержкой
+            aboutUsDiv.style.display = "block";
+            aboutUsDiv.style.opacity = "0";
+            setTimeout(() => {
+                aboutUsDiv.style.transition = "opacity 1s ease-in";
+                aboutUsDiv.style.opacity = "1"; // Плавное появление блока
+            }, 50); // Небольшая задержка, чтобы браузер успел применить display: block
+        }, 1000);
+    }
+
+    aboutUsVisible = !aboutUsVisible; // Переключаем флаг
+}
+

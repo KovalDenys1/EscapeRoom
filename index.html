@@ -14,32 +14,52 @@
             <div class="loading-text">Download<span class="dots"></span></div>
         </div>
     </div>
+    
     <header>
         <nav>
-            <a href="./html/adbout_us.html">About us</a>
-            <a href="#">Home</a>
-            <a href="./html/info.html">Info</a>
+            <a href="#about_us" id="about-us-link">About us</a>
+            <a href="#home" id="home">Home</a>
+            <a href="#info">Info</a>
         </nav>
     </header>
+    
     <main>
-            <div class="background-text">
-              <p>Escape room Escape room Escape room Escape room Escape room Escape room Escape room Escape room</p>
+        <div class="background-text">
+            <p>Escape room Escape room Escape room Escape room Escape room Escape room Escape room Escape room</p>
+        </div>
+        <div class="hero-name">Hero: Your Name</div>
+        <div class="danger">Danger 0%</div>
+        <img src="./img/Girl_png.png" alt="Main_charakter" class="target-image">
+        <button class="play-btn danger-btn">Play</button>
+    
+        <div class="welcome-div">
+            <div class="welcome-img-wrapper"><img src="./img/Girl_png.png" alt="Welcome-girl"></div>
+            <div class="welcome-text" id="welcome-text">Hello Yourname! Welcome to our game.<br>
+                You have traveled to the future using a time machine, but it’s broken, and now you must repair it...
+                <div class="welcome-text-btns">
+                    <button class="back-to-home">Back</button>
+                    <button class="first-puzzle">Let's do it!</button>
+                </div>
             </div>
-            <div class="hero-name">Hero: Your Name</div>
-            <div class="danger">Danger 0%</div>
-            <img src="./img/Girl_png.png" alt="Main_charakter" class="target-image">
-            <button class="play-btn danger-btn">Play</button>
-
-            <div class="welcome-div">
-                <div class="welcome-img-wrapper"><img src="./img/Girl_png.png" alt="Welcome-girl"></div>
-                <div class="welcome-text">Hello there! Welcome to our game.<br>
-                    You have traveled to the future using a time machine, but it’s broken, and now you must repair it...
-                    <div class="welcome-text-btns">
-                        <button class="back-to-home">Back</button>
-                        <button class="first-puzzle">Let's do it!</button>
-                    </div>
+        </div>
+    
+        <div class="about_us" style="display: none; opacity: 0;">
+            <div class="about_us_wrapper">
+                <div class="we-img-wrapper">
+                    <img src="./img/blue_robot_1.png" alt="Nikol" class="Nikol">
+                    <img src="./img/black_robot.png" alt="Denys" class="Denys">
                 </div>
+                <div class="text_abous_us">
+                <div>About us</div>
+                <div>Hi there! 
+                    This is Nikol and Denys. 
+                    We are Junior Fronted Developers. 
+                    We are students of high school Kuben in Oslo. 
+                    We decided to come up with the Escape Room to realize our potentials in the front -end development. We are always open for new offers, write to our mail and visit our <a href="https://github.com/KovalDenys1/EscapeRoom" style="text-decoration: none; color:#F62336;">Github</a>.
                 </div>
+            </div>
+        </div>
+        </div>
         <!-- Puzzle 1 -->
         <div class="puzzle-container" id="puzzle1">
             <div class="puzzle-1-img-wrapper"><img src="./img/black_robot.png" alt="Welcome-girl"></div>
