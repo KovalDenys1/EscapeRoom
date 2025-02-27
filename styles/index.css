@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     height: 100vh;
     background: linear-gradient(to bottom, #8F000E 42%, #F62336 100%);
-    font-size: clamp(16px, 3vw, 36px);
+    font-size: clamp(20px, 2vw, 50px);
     font-family: 'Nico Moji', sans-serif;
     color: white;
 }
@@ -50,7 +50,7 @@ main{
     position: absolute;
     top: 0;
     height: 100%;
-    z-index: 2; /* Картинка будет спереди */
+    z-index: 2; 
     animation: resizeAnimation 2.8s infinite ease-in-out;
   }
 
@@ -68,14 +68,14 @@ main{
   main .background-text {
     position: absolute;
     top: 55%;
-    left: -100%; /* Начальная позиция текста слева за пределами контейнера */
+    left: -100%; 
     transform: translateY(-100%);
     white-space: nowrap;
-    z-index: 1; /* Текст будет позади картинки */
+    z-index: 1; 
     font-size: 15rem;
     color: white;
     white-space: nowrap;
-    animation: moveText 12s linear infinite; /* Анимация движения текста */
+    animation: moveText 12s linear infinite; 
   }
   main .hero-name{
     position: absolute;
@@ -91,15 +91,15 @@ main{
   }
   .play-btn{
     position: absolute;
-  background-color: rgba(28, 28, 28, 0.7); /* Зеленый цвет */
+  background-color: rgba(28, 28, 28, 0.7); 
   backdrop-filter: blur(6.5px);
-  color: white; /* Цвет текста */
+  color: white; 
   z-index: 3;
-  padding: 1rem 10rem 3rem 8rem; /* Отступы вокруг текста */
-  border: none; /* Без рамки */
-  cursor: pointer; /* Курсор меняется на руку при наведении */
-  transition: all 0.3s ease; /* Плавный переход для всех изменений */
- font-size: clamp(100px, 3vw, 110px);
+  padding: 0.7rem 8rem 2rem 6rem; 
+  border: none; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+ font-size: clamp(50px, 4vw, 110px);
  font-family: 'Nico Moji', sans-serif;
  top: 75%;
  clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 0% 100%);
@@ -110,10 +110,10 @@ main{
 }
   @keyframes moveText {
     0% {
-      left: -100%; /* Текст начинается слева за пределами */
+      left: -100%;
     }
     100% {
-      left: 11%; /* Текст заканчивает движение справа за пределами */
+      left: 11%;
     }
   }
 .welcome-div{
@@ -147,13 +147,13 @@ main{
   text-align: center;
 }
 .welcome-text button{
-  background-color: rgba(20, 20, 20, 0.9); /* Зеленый цвет */
+  background-color: rgba(20, 20, 20, 0.9);
   backdrop-filter: blur(6.5px);
   color: white;
-  padding: 1rem 3rem; /* Отступы вокруг текста */
-  border: none; /* Без рамки */
-  cursor: pointer; /* Курсор меняется на руку при наведении */
-  transition: all 0.3s ease; /* Плавный переход для всех изменений */
+  padding: 1rem 3rem; 
+  border: none; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
  font-size: clamp(40px, 3vw, 60px);
  font-family: 'Nico Moji', sans-serif;
 }
@@ -162,15 +162,94 @@ main{
 }
 
 .puzzle-container {
-    text-align: center;
-    margin-top: 50px;
+  position: absolute;
+  display: none;
+  height: 80vh;
+  width: 85vw;
 }
-.puzzle-text {
-    margin-bottom: 20px;
+.puzzle-container .puzzle-1-img-wrapper{
+  height: 100%;
+  width: 40%;
+  position: absolute;
 }
-.input-container {
-    margin-bottom: 20px;
+.puzzle-container .puzzle-1-img-wrapper img{
+  max-height: 100%; 
+    width: auto; 
+    object-fit: contain;
 }
-input[type="text"] {
-    padding: 5px;
+.puzzle-wrapper{
+  position: absolute;
+  height: 50%;
+  width: 60%;
+  left: 30%;
+  top: 45%;
+}
+.puzzle{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%
+}
+.puzzle-1{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(6.5px);
+  padding: 2rem;
+  width: 100%;
+  height: 80%;
+}
+.message{
+  color: #F62336;
+}
+.answer-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+.puzzle-container button{
+  background-color: rgba(20, 20, 20, 0.9);
+  backdrop-filter: blur(6.5px);
+  color: white;
+  padding: 1rem 6rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+ font-size: clamp(40px, 3vw, 60px);
+ font-family: 'Nico Moji', sans-serif;
+}
+.puzzle-container button:hover{
+    background-color: rgba(45, 45, 45, 0.7);
+}
+.input-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input{
+  border: 2px solid transparent;
+  transition: 0.5s;
+  padding: 1rem;
+  font-family: 'Nico Moji', sans-serif;
+  font-size: clamp(20px, 2vw, 30px);
+}
+input:focus{
+  border-color: #F62336;
+  box-shadow: 0 0 25px #F62336;
+  scale: 1.10;
+}
+.hero_speech{
+  position: absolute;
+  padding: 1rem;
+  background-color: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(6.5px);
+  left: 20%;
+  top: 20%;
 }

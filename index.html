@@ -58,33 +58,44 @@
                 You have traveled to the future using a time machine, but it’s broken, and now you must repair it...
                 <button>Let's do it!</button>
             </div>
+
         </div>
+            <div class="hero-name">Hero: Your Name</div>
+            <div class="danger">Danger 0%</div>
+            <img src="./img/Girl_png.png" alt="Main_charakter" class="target-image">
+            <button class="play-btn danger-btn">Play</button>
 
-        <!-- About us -->
-
-
-
-
+            <div class="welcome-div">
+                <div class="welcome-img-wrapper"><img src="./img/Girl_png.png" alt="Welcome-girl"></div>
+                <div class="welcome-text">Hello there! Welcome to our game.<br>
+                    You have traveled to the future using a time machine, but it’s broken, and now you must repair it...
+                    <div class="welcome-text-btns">
+                        <button class="back-to-home">Back</button>
+                        <button class="first-puzzle">Let's do it!</button>
+                    </div>
+                </div>
+                </div>
         <!-- Puzzle 1 -->
-        <!--
         <div class="puzzle-container" id="puzzle1">
-            <div class="puzzle-text">
-                Encrypted message: <br>
-                <strong>Efozt boe Ojmpl</strong>
+            <div class="puzzle-1-img-wrapper"><img src="./img/black_robot.png" alt="Welcome-girl"></div>
+                <div class="puzzle-wrapper">
+                    <div class="puzzle">
+                        <div class="puzzle-1">
+                            <div class="task">Encrypted message(+1):</div> 
+                            <div class="message">Efozt boe Ojmpl</div> 
+                            <label for="answer1">Enter your answer:</label>
+                            <input type="text" id="answer1" placeholder="Decrypted message">
+                            <div id="feedback1"></div>
+                        </div>
+                        <div class="answer-btn"><button onclick="checkAnswer('answer1', 'puzzle1', 'puzzle2')">Check</button></div>
+                    </div>
+                </div>
+            <div class="hero_speech">
+            Hello hero!<br>Your first task is Caesar's encryption..
             </div>
-    
-            <div class="input-container">
-                <label for="answer1">Enter your answer:</label><br>
-                <input type="text" id="answer1" placeholder="Your answer">
-            </div>
-    
-            <button onclick="checkAnswer('answer1', 'puzzle1', 'puzzle2')">Check</button>
-    
-            <div id="feedback1" style="margin-top: 20px;"></div>
         </div>
-        -->
+
         <!-- Puzzle 2 -->
-        <!--
         <div class="puzzle-container" id="puzzle2" style="display: none;">
             <div class="puzzle-text">
                 What is 5 + 3?
@@ -97,11 +108,9 @@
     
             <button onclick="checkAnswer('answer2', 'puzzle2', 'puzzle3')">Check</button>
     
-            <div id="feedback2" style="margin-top: 20px;"></div>
+            <div id="feedback2" style="margin-top: 1rem;"></div>
         </div>
-        -->
         <!-- Puzzle 3 -->
-        <!--
         <div class="puzzle-container" id="puzzle3" style="display: none;">
             <div class="puzzle-text">
                 I am always ahead, but I can never be reached. What am I?
@@ -114,11 +123,9 @@
     
             <button onclick="checkAnswer('answer3', 'puzzle3', 'puzzle4')">Check</button>
     
-            <div id="feedback3" style="margin-top: 20px;"></div>
+            <div id="feedback3" style="margin-top: 1rem;"></div>
         </div>
-        -->
         <!-- Puzzle 4 -->
-        <!--
         <div class="puzzle-container" id="puzzle4" style="display: none;">
             <div class="puzzle-text">
                 Find the secret answer in the console.
@@ -131,9 +138,8 @@
     
             <button onclick="checkAnswer('answer4', 'puzzle4', null)">Check</button>
     
-            <div id="feedback4" style="margin-top: 20px;"></div>
+            <div id="feedback4" style="margin-top: 1rem;"></div>
         </div>
-        -->
         <!-- Puzzle 5 -->
         <!--
 <div class="puzzle-container" id="puzzle5" style="display: none;">
