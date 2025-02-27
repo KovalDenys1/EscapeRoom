@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="loader"></div>
+            <div class="loading-text">Download<span class="dots"></span></div>
+        </div>
+    </div>
     <header>
         <nav>
             <a href="./html/adbout_us.html">About us</a>
@@ -41,9 +47,9 @@
                     <div class="puzzle">
                         <div class="puzzle-1">
                             <div class="task">Encrypted message(+1):</div> 
-                            <div class="message">Efozt boe Ojmpl</div> 
+                            <div class="message">Ojmpl boe Efozt</div> 
                             <label for="answer1">Enter your answer:</label>
-                            <input type="text" id="answer1" placeholder="Decrypted message">
+                            <input type="text" id="answer1" placeholder="decrypted message">
                             <div id="feedback1"></div>
                         </div>
                         <div class="answer-btn"><button onclick="checkAnswer('answer1', 'puzzle1', 'puzzle2')">Check</button></div>
@@ -53,71 +59,65 @@
             Hello hero!<br>Your first task is Caesar's encryption..
             </div>
         </div>
-
         <!-- Puzzle 2 -->
         <div class="puzzle-container" id="puzzle2" style="display: none;">
-            <div class="puzzle-text">
-                What is 5 + 3?
+            <div class="puzzle-1-img-wrapper"><img src="./img/black_robot.png" alt="Welcome-girl"></div>
+                <div class="puzzle-wrapper">
+                    <div class="puzzle">
+                        <div class="puzzle-1">
+                            <div class="task">Here is the equation:</div> 
+                            <div class="message">5(x−2)=3x+4</div> 
+                            <label for="answer2">Write what X is equal to:</label>
+                            <input type="text" id="answer2" placeholder="asnwer">
+                            <div id="feedback2"></div>
+                        </div>
+                        <div class="answer-btn"><button onclick="checkAnswer('answer2', 'puzzle2', 'puzzle3')">Check</button></div>
+                    </div>
+                </div>
+            <div class="hero_speech">
+            Wow, you successfully completed first task! Here is your second task.<br>Your second task is an equation..
             </div>
-    
-            <div class="input-container">
-                <label for="answer2">Enter your answer:</label><br>
-                <input type="text" id="answer2" placeholder="Your answer">
-            </div>
-    
-            <button onclick="checkAnswer('answer2', 'puzzle2', 'puzzle3')">Check</button>
-    
-            <div id="feedback2" style="margin-top: 1rem;"></div>
         </div>
         <!-- Puzzle 3 -->
         <div class="puzzle-container" id="puzzle3" style="display: none;">
-            <div class="puzzle-text">
-                I am always ahead, but I can never be reached. What am I?
+            <div class="puzzle-1-img-wrapper"><img src="./img/black_robot.png" alt="Welcome-girl"></div>
+                <div class="puzzle-wrapper">
+                    <div class="puzzle">
+                        <div class="puzzle-1">
+                            <div class="task">Puzzle:</div> 
+                            <div class="message">I am always ahead, but I can never be reached. What am I?</div> 
+                            <label for="answer3">Enter your answer:</label>
+                            <input type="text" id="answer3" placeholder="answer">
+                            <div id="feedback3"></div>
+                        </div>
+                        <div class="answer-btn"><button onclick="checkAnswer('answer3', 'puzzle3', 'puzzle4')">Check</button></div>
+                    </div>
+                </div>
+            <div class="hero_speech">
+                You've completed half of the puzzles!<br>It's time to think about the future..
             </div>
-    
-            <div class="input-container">
-                <label for="answer3">Enter your answer:</label><br>
-                <input type="text" id="answer3" placeholder="Your answer">
-            </div>
-    
-            <button onclick="checkAnswer('answer3', 'puzzle3', 'puzzle4')">Check</button>
-    
-            <div id="feedback3" style="margin-top: 1rem;"></div>
         </div>
         <!-- Puzzle 4 -->
         <div class="puzzle-container" id="puzzle4" style="display: none;">
-            <div class="puzzle-text">
-                Find the secret answer in the console.
+            <div class="puzzle-1-img-wrapper"><img src="./img/black_robot.png" alt="Welcome-girl"></div>
+                <div class="puzzle-wrapper">
+                    <div class="puzzle">
+                        <div class="puzzle-1">
+                            <div class="task">You must think outside the box:</div> 
+                            <div class="message">The mechanic will <span style="color: #ffffff;">inspect</span> the car.</div> 
+                            <label for="answer4">Enter your answer:</label>
+                            <input type="text" id="answer4" placeholder="Decrypted message">
+                            <div id="feedback4"></div>
+                        </div>
+                        <div class="answer-btn"><button onclick="checkAnswer('answer4', 'puzzle4', 'puzzle5')">Check</button></div>
+                    </div>
+                </div>
+            <div class="hero_speech">
+                You completed 3 tasks. Now it's time for the 4th. It will be more difficult.
             </div>
-    
-            <div class="input-container">
-                <label for="answer4">Enter your answer:</label><br>
-                <input type="text" id="answer4" placeholder="Your answer">
-            </div>
-    
-            <button onclick="checkAnswer('answer4', 'puzzle4', null)">Check</button>
-    
-            <div id="feedback4" style="margin-top: 1rem;"></div>
         </div>
-        <!-- Puzzle 5 -->
-         <!--
-<div class="puzzle-container" id="puzzle5" style="display: none;">
-    <div class="puzzle-text">
-        You have two ropes. Each rope has the property that if you light it on fire at one end, it will take exactly 60 minutes to burn completely. However, the ropes do not burn at a uniform rate. For example, half of the rope could burn in 1 minute, and the other half could burn in 59 minutes. How can you measure exactly 45 minutes using only these two ropes?
-    </div>
-
-    <div class="buttons-container">
-        <button onclick="checkAnswer('option1', 'puzzle5', null)">Light both ropes from one end</button>
-        <button onclick="checkAnswer('option2', 'puzzle5', null)">Light both ropes from both ends</button>
-        <button onclick="checkAnswer('option3', 'puzzle5', null)">Light one rope from one end, second rope from both ends</button>
-    </div>
-
-    <div id="feedback5" style="margin-top: 20px;"></div>
-</div>
-
-        -->
     </main>
-    
+    <script src="./js/preloader.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>

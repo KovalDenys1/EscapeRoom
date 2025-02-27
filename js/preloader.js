@@ -7,12 +7,10 @@ window.onload = function() {
 
         setTimeout(() => {
             preloader.style.display = "none";
-
-            // Показываем всплывающее окно после исчезновения preloader
             let heroName = prompt("Enter your character's name:");
             if (heroName !== null && heroName.trim() !== "") {
                 document.querySelector(".hero-name").textContent = "Hero: " + heroName;
             }
         }, 500);
-    }, 2000);
+    }, 750);
 };

@@ -1,13 +1,3 @@
-window.onload = function() {
-    // Показываем всплывающее окно для ввода имени персонажа
-  // var heroName = prompt("Enter your character's name:");
-  
-    // Если пользователь что-то ввел, меняем текст в div
-    if (heroName !== null && heroName !== "") {
-      document.querySelector(".hero-name").textContent = "Hero: " + heroName;
-    }
-  };
-
   const dangerElement = document.querySelector(".danger");
   const dangerBtn = document.querySelector(".danger-btn");
   
@@ -161,15 +151,13 @@ function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
 
     // Define the correct answers for each puzzle
     if (currentPuzzleId === 'puzzle1') {
-        correctAnswer = "denys and nikol".toLowerCase();
+        correctAnswer = "nikol and denys".toLowerCase();
     } else if (currentPuzzleId === 'puzzle2') {
-        correctAnswer = "8";
+        correctAnswer = "7";
     } else if (currentPuzzleId === 'puzzle3') {
         correctAnswer = "future";
     } else if (currentPuzzleId === 'puzzle4') {
         correctAnswer = "console";
-    } else if (currentPuzzleId === 'puzzle5') {
-        correctAnswer = "option3";
     }
 
     const feedback = document.getElementById('feedback' + currentPuzzleId.charAt(6));
@@ -208,6 +196,11 @@ function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
                 }, 1500);
             }
         }, 1000);
+
+        // Change background color to yellow gradient on the third puzzle
+        if (currentPuzzleId === 'puzzle2') {
+            document.body.style.background = 'linear-gradient(to bottom, #FFAA01, #FFD401)';
+        }
     } else {
         // Анимация плавного появления текста ошибки
         feedback.innerHTML = "<span class='incorrect-answer' style='color: #F62336;'>Incorrect answer</span>";
@@ -222,7 +215,7 @@ function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
     }
 
     // For the 4th puzzle, log the answer in the console
-    if (currentPuzzleId === 'puzzle4') {
+    if (currentPuzzleId === 'puzzle3') {
         console.log("The secret answer is: console");
     }
 }
