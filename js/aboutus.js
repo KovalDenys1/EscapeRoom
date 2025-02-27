@@ -1,6 +1,5 @@
 document.querySelector('#about-us-link').addEventListener('click', function(event) {
     event.preventDefault(); // Отменяет стандартное поведение (переход по ссылке)
-
     // Скрытие ненужных элементов
     const elementsToHide = document.querySelectorAll(".hero-name, .danger, .play-btn");
     const specificImage = document.querySelector(".target-image");
