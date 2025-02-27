@@ -132,7 +132,7 @@ document.querySelector(".first-puzzle").addEventListener("click", () => {
 
         document.body.style.transition = "background 1s ease";
         document.body.style.background = "linear-gradient(to bottom, #013779, #016BC3)";
-    }, 1500);
+    }, 1400);
 });
 
 

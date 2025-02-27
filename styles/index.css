@@ -239,7 +239,7 @@ main{
   height: 50%;
   width: 60%;
   left: 30%;
-  top: 45%;
+  top: 35%;
 }
 .puzzle{
   display: flex;
@@ -309,5 +309,5 @@ input:focus{
   background-color: rgba(20, 20, 20, 0.8);
   backdrop-filter: blur(6.5px);
   left: 20%;
-  top: 20%;
+  top: 15%;
 }
