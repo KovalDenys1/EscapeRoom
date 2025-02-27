@@ -199,8 +199,10 @@ function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
 
         // Change background color to yellow gradient on the third puzzle
         if (currentPuzzleId === 'puzzle2') {
-            document.body.style.background = 'linear-gradient(to bottom, #FFAA01, #FFD401)';
-        }
+            setTimeout(() => {
+                document.body.style.background = 'linear-gradient(to bottom, #FFAA01, #FFD401)';
+            }, 2000); // Задержка в 1 секунду (1000 миллисекунд)
+        }        
     } else {
         // Анимация плавного появления текста ошибки
         feedback.innerHTML = "<span class='incorrect-answer' style='color: #F62336;'>Incorrect answer</span>";
