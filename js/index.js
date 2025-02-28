@@ -210,6 +210,33 @@ function checkAnswer(answerId, currentPuzzleId, nextPuzzleId) {
     if (currentPuzzleId === 'puzzle3') {
         console.log("The secret answer is: console");
     }
+    if (currentPuzzleId === 'puzzle4') {
+        setTimeout(() => {
+            const finalDiv = document.createElement("div");
+            finalDiv.classList.add("final-div");
+            finalDiv.innerText = "Congratulations, you have completed all the puzzles! Now the robots will help you return to present time!";
+            finalDiv.style.position = "fixed";
+            finalDiv.style.top = "50%";
+            finalDiv.style.left = "50%";
+            finalDiv.style.transform = "translate(-50%, -50%)";
+            finalDiv.style.padding = "20px";
+            finalDiv.style.background = "rgba(20, 20, 20, 0.8)";
+            finalDiv.style.color = "white";
+            finalDiv.style.fontSize = "24px";
+            finalDiv.style.borderRadius = "10px";
+            finalDiv.style.textAlign = "center";
+            finalDiv.style.zIndex = "1000";
+            finalDiv.style.opacity = "0";
+            finalDiv.style.transition = "opacity 1.5s ease-in";
+    
+            document.body.appendChild(finalDiv);
+    
+            setTimeout(() => {
+                finalDiv.style.opacity = "1";
+            }, 100);
+        }, 2000);
+    }
+    
 }
 
 
@@ -280,4 +307,3 @@ function toggleAboutUs() {
 
     aboutUsVisible = !aboutUsVisible; // Переключаем флаг
 }
-
