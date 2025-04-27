@@ -2,7 +2,18 @@
 
 A web-based escape room experience where users must complete a series of interactive quests and challenges to advance through the game.
 
-Perfect for practicing logical thinking and user interaction in a browser-based game.
+This project was created collaboratively by [Denys Koval](https://github.com/KovalDenys1) and [Nikol Voronina](https://github.com/NikolVoronina).
+
+---
+
+📖 About the Project
+
+This project was developed as a collaborative effort between Denys Koval and Nikol Voronina.
+The goal was to create an engaging web-based escape room experience using only core web technologies — HTML, CSS, and vanilla JavaScript — without relying on external frameworks.
+
+Together, we designed interactive puzzles, implemented user progression logic, and crafted a responsive and intuitive interface.
+
+Through this project, we practiced teamwork, creative problem-solving, and real-world web development skills.
 
 ---
 
@@ -19,6 +30,7 @@ Perfect for practicing logical thinking and user interaction in a browser-based 
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Frameworks:** None (vanilla JS)
+- **Hosting:** *(Add hosting info if deployed)*
 
 ---
 
@@ -36,11 +48,10 @@ To run the project locally:
 
 ---
 
-## 📦 Future Ideas
+## 🤝 Collaborators
 
-- Add sound/music effects
-- Add timer or leaderboard
-- Save user progress in `localStorage`
+- [Denys Koval](https://github.com/KovalDenys1) – development, design
+- [Nikol Voronina](https://github.com/NikolVoronina) – development, design
 
 ---
 
@@ -51,4 +62,4 @@ To run the project locally:
 
 ---
 
-> Made by Denys Koval — blending logic, fun & code to build interactive experiences.
+> Created with teamwork, logic, and creativity by Denys Koval and Nikol Voronina.
